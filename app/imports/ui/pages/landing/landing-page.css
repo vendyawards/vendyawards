@@ -1,32 +1,32 @@
 .landing-section-1 {
   padding: 10px 10px 30px 10px;
-  background-color: #00B5AD;
-  color: #E5F9E7;
+  background-color: blue;
+  color: green;
 }
 
 .landing-section-2 {
-  padding: 20px 10px 20px 10px;
-  background-color: #E5F9E7;
-  color:  #00B5AD;
+  padding: 20px 20px 20px 20px;
+  background-color: green;
+  color: blue;
 }
 
 .landing-section-3 {
   padding: 20px 10px 30px 30px;
-  background-color: #00B5AD;
-  color: #E5F9E7;
+  background-color: blue;
+  color: green;
 }
 
 .landing-section-5 {
   padding: 20px 10px 20px 10px;
-  background-color: #00B5AD;
-  color: #E5F9E7;
+  background-color: blue;
+  color: green;
 }
 
 
 .landing-section-1-welcome {
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
-  font-size: 72px;
+  font-size: 60px;
 }
 
 .landing-section-header {
