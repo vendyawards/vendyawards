@@ -1,0 +1,12 @@
+.ui.card.sizing{
+  width: 50%;
+}
+.ui.text.headertext{
+  font-size: 2.5rem;
+  margin: 50px;
+  padding: 25px;
+}
+
+.ui.items.rightpadding{
+  padding: 120px;
+}

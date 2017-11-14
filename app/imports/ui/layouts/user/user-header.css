@@ -1,0 +1,6 @@
+.ui.menu.inverted.gradient {
+  background: linear-gradient(101.12deg, #9E4FE0 0%, #4D5CC8 100%);
+}
+.ui.menu.heightsix{
+  min-height: 6em;
+}
