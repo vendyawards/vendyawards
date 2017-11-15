@@ -3,10 +3,18 @@
 }
 .ui.text.headertext{
   font-size: 2.5rem;
-  margin: 50px;
+  margin: 135px;
   padding: 25px;
 }
 
 .ui.items.rightpadding{
   padding: 120px;
+}
+
+.ui.items > .item > .image + .content.leftpaddingtext{
+  padding: 5em;
+}
+
+.ui.items > .item > .content > .header.fontForContestWinners {
+  font-size: 18pt;
 }
