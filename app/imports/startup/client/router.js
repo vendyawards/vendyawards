@@ -68,6 +68,16 @@ userRoutes.route('/filter', {
   },
 });
 
+export const votingPageRouteName = 'Filter_Page';
+userRoutes.route('/voting', {
+  name: filterPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: filterPageRouteName });
+  },
+});
+
+
+
 /*                        MISC ROUTES                       */
 FlowRouter.notFound = {
   action() {
