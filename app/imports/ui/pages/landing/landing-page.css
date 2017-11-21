@@ -1,24 +1,24 @@
 .landing-section-1 {
   padding: 10px 10px 30px 10px;
-  background-color: #00B5AD;
+  background: linear-gradient(101.12deg, #9E4FE0 0%, #4D5CC8 100%);
   color: #E5F9E7;
 }
 
 .landing-section-2 {
   padding: 20px 10px 20px 10px;
-  background-color: #E5F9E7;
-  color:  #00B5AD;
+  color: #E5F9E7;
+  background: linear-gradient(101.12deg, #9E4FE0 0%, #4D5CC8 100%);
 }
 
 .landing-section-3 {
   padding: 20px 10px 30px 30px;
-  background-color: #00B5AD;
+  background: linear-gradient(101.12deg, #9E4FE0 0%, #4D5CC8 100%);
   color: #E5F9E7;
 }
 
 .landing-section-5 {
   padding: 20px 10px 20px 10px;
-  background-color: #00B5AD;
+  background: linear-gradient(101.12deg, #9E4FE0 0%, #4D5CC8 100%);
   color: #E5F9E7;
 }
 
