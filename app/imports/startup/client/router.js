@@ -60,6 +60,14 @@ userRoutes.route('/profile', {
   },
 });
 
+export const contestWinnerPageRouteName = 'ContestWinner_Page';
+userRoutes.route('/winner', {
+  name: contestWinnerPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: contestWinnerPageRouteName });
+  },
+});
+
 export const filterPageRouteName = 'Filter_Page';
 userRoutes.route('/filter', {
   name: filterPageRouteName,
