@@ -76,6 +76,13 @@ userRoutes.route('/voting', {
   },
 });
 
+export const mapPageRouteName = 'Map_Page';
+userRoutes.route('/map', {
+  name: mapPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: mapPageRouteName });
+  },
+});
 
 
 /*                        MISC ROUTES                       */
