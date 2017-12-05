@@ -1,2 +1,7 @@
 import './profile-page.html';
 import './profile-page';
+import './map-page';
+import './map-page.html';
+import './contestWinner.css';
+import './contestWinner-page.html';
+import 'contestWinner-page';

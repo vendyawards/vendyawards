@@ -1,25 +1,19 @@
 .landing-section-1 {
   padding: 10px 10px 30px 10px;
-  background-color: blue;
-  color: green;
+  background-color:#694D90;
+  color: white;
 }
 
 .landing-section-2 {
   padding: 20px 20px 20px 20px;
-  background-color: green;
-  color: blue;
-}
-
-.landing-section-3 {
-  padding: 20px 10px 30px 30px;
-  background-color: blue;
-  color: green;
+  background-color: white;
+  color: #694D90;
 }
 
 .landing-section-5 {
   padding: 20px 10px 20px 10px;
-  background-color: blue;
-  color: green;
+  background-color: #694D90;
+  color: white;
 }
 
 
