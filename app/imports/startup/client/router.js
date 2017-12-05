@@ -68,11 +68,27 @@ userRoutes.route('/filter', {
   },
 });
 
-export const votingPageRouteName = 'Voting_Page';
+export const votingPageRouteName = 'Filter_Page';
 userRoutes.route('/voting', {
-  name: votingPageRouteName,
+  name: filterPageRouteName,
   action() {
-    BlazeLayout.render('User_Layout', { main: votingPageRouteName });
+    BlazeLayout.render('User_Layout', { main: filterPageRouteName });
+  },
+});
+
+export const mapPageRouteName = 'Map_Page';
+userRoutes.route('/map', {
+  name: mapPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: mapPageRouteName });
+  },
+});
+
+export const contestWinnerPageRouteName = 'ContestWinner_Page';
+userRoutes.route('/winner', {
+  name: contestWinnerPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: contestWinnerPageRouteName });
   },
 });
 
