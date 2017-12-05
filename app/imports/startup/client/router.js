@@ -76,7 +76,21 @@ userRoutes.route('/voting', {
   },
 });
 
+export const mapPageRouteName = 'Map_Page';
+userRoutes.route('/map', {
+  name: mapPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: mapPageRouteName });
+  },
+});
 
+export const contestWinnerPageRouteName = 'ContestWinner_Page';
+userRoutes.route('/winner', {
+  name: contestWinnerPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: contestWinnerPageRouteName });
+  },
+});
 
 /*                        MISC ROUTES                       */
 FlowRouter.notFound = {

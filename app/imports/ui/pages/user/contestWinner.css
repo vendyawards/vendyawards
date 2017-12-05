@@ -1,0 +1,20 @@
+.ui.card.sizing{
+  width: 50%;
+}
+.ui.text.headertext{
+  font-size: 2.5rem;
+  margin: 5px;
+  padding: 100px 50px 20px 225px;
+}
+
+.ui.items.rightpadding{
+  padding: 120px;
+}
+
+.ui.items > .item > .image + .content.leftpaddingtext{
+  padding: 50px 10px 5px 10px;
+}
+
+.ui.items > .item > .content > .header.fontForContestWinners {
+  font-size: 18pt;
+}

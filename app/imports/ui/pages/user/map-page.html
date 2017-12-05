@@ -1,0 +1,56 @@
+<template name="Map_Page">
+
+  <html>
+  <head>
+    <style>
+      #map {
+        height: 600px;
+        width: 65%;
+        margin: 50px 150px 50px 150px;
+      }
+    </style>
+  </head>
+  <link rel="stylesheet" href="map-page.css">
+
+  <body>
+  <div class="ui text headerText">
+    Google Maps
+  </div>
+  <div id="map"></div>
+  <script>
+    function toggleBounce() {
+      if (marker.getAnimation() !== null) {
+        marker.setAnimation(null);
+      } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+      }
+    }
+    function initMap() {
+      var manoa = { lat: 21.294206, lng: -157.818520 };
+      var v1 = { lat: 21.294206, lng: -157.818520 };
+      var v2 = { lat: 21.294206, lng: -157.818520 };
+      var v3 = { lat: 21.294206, lng: -157.818520 };
+      var v4 = { lat: 21.294206, lng: -157.818520 };
+      var v5 = { lat: 21.294206, lng: -157.818520 };
+      var v6 = { lat: 21.294206, lng: -157.818520 };
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 17,
+        center: manoa
+      });
+      var marker = new google.maps.Marker({
+        position: manoa,
+        map: map,
+        animation: google.maps.Animation.DROP,
+        <!--label: 'V'-->
+      });
+      marker.addListener('click', toggleBounce);
+    }
+  </script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApofu0JMHh1EKcS9hiJ9GLMzMmnV-8pJs&callback=initMap"
+          type="text/javascript"></script>
+  </body>
+  </html>
+
+
+</template>
