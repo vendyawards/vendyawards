@@ -84,6 +84,13 @@ userRoutes.route('/map', {
   },
 });
 
+export const contestWinnerPageRouteName = 'ContestWinner_Page';
+userRoutes.route('/winner', {
+  name: contestWinnerPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: contestWinnerPageRouteName });
+  },
+});
 
 /*                        MISC ROUTES                       */
 FlowRouter.notFound = {
