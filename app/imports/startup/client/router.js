@@ -68,14 +68,6 @@ userRoutes.route('/filter', {
   },
 });
 
-export const votingPageRouteName = 'Filter_Page';
-userRoutes.route('/voting', {
-  name: filterPageRouteName,
-  action() {
-    BlazeLayout.render('User_Layout', { main: filterPageRouteName });
-  },
-});
-
 export const mapPageRouteName = 'Map_Page';
 userRoutes.route('/map', {
   name: mapPageRouteName,
