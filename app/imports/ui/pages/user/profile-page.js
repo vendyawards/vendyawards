@@ -30,7 +30,7 @@ Template.Profile_Page.helpers({
 });
 
 Template.Profile_Page.events({
-  'submit .profile-data-form'(event, instance) {
+  'submit .nomination-form'(event, instance) {
     event.preventDefault();
     const first = event.target.First.value;
     const second = event.target.Second.value;
@@ -38,12 +38,12 @@ Template.Profile_Page.events({
     const fourth = event.target.Fourth.value;
     const fifth = event.target.Fifth.value;
 
-    const updatedProfileData = { first, second, third, fourth, fifth };
+    const updatedNominationData = { first, second, third, fourth, fifth };
 
     // Clear out any old validation errors.
     instance.context.reset();
     // Invoke clean so that updatedProfileData reflects what will be inserted.
-    const cleanData = Profiles.getSchema().clean(updatedProfileData);
+    const cleanData = Profiles.getSchema().clean(updatedNominationData);
     // Determine validity.
     instance.context.validate(cleanData);
 
@@ -56,6 +56,9 @@ Template.Profile_Page.events({
       instance.messageFlags.set(displaySuccessMessage, false);
       instance.messageFlags.set(displayErrorMessages, true);
     }
-    FlowRouter.go('Landing_Page');
+  },
+
+  'click .submit'() {
+    FlowRouter.go('');
   },
 });
