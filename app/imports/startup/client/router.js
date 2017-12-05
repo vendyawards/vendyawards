@@ -91,6 +91,13 @@ userRoutes.route('/winner', {
     BlazeLayout.render('User_Layout', { main: contestWinnerPageRouteName });
   },
 });
+export const votingPageRouteName = 'Voting_Page';
+userRoutes.route('/voting', {
+  name: votingPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: votingPageRouteName });
+  },
+});
 
 /*                        MISC ROUTES                       */
 FlowRouter.notFound = {
