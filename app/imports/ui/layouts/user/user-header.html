@@ -4,8 +4,10 @@
 
     <div class="ui container">
       <div class="item"><h1>VENDY AWARDS</h1></div>
-      <!--  <a class="{{isActiveRoute "Profile_Page"}} item" href="{{pathFor "Profile_Page" username=routeUserName}}">Profile</a> -->
-      <!--  <a class="{{isActiveRoute "Filter_Page"}} item" href="{{pathFor "Filter_Page" username=routeUserName}}">Filter</a> -->
+      <a class="{{isActiveRoute "Profile_Page"}} item" href="{{pathFor "Profile_Page" username=routeUserName}}">Nomination Page</a>
+      <a class="{{isActiveRoute "Voting_Page"}} item" href="{{pathFor "Voting_Page" username=routeUserName}}">Voting Page</a>
+      <a class="{{isActiveRoute "Contest_Winners_Page"}} item" href="{{pathFor "Contest_Winner_Page" username=routeUserName}}">Contest Winners Page</a>
+      <a class="{{isActiveRoute "Map_Page"}} item" href="{{pathFor "Map_Page" username=routeUserName}}">Map Page</a>
       <div class="right aligned item">{{> Cas_Login }}</div>
     </div>
   </div>
