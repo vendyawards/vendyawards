@@ -4,9 +4,9 @@
   <head>
     <style>
       #map {
-        height: 600px;
+        height: 700px;
         width: 65%;
-        margin: 50px 250px 50px 270px;
+        margin: 50px 200px 50px 350px;
       }
     </style>
   </head>
@@ -21,8 +21,7 @@
 
   <div class="ui text headerText">
     <p></p>
-    <p>Check out the vending machines that supports</p>
-    <p>the winners from VendyAwards!</p>
+    <p>Check out the locations supported by the vote!</p>
   </div>
   <div id="map"></div>
 
@@ -85,7 +84,6 @@
     }
     var directionsService = new google.maps.DirectionsService();
     var directionsDisplay = new google.maps.DirectionsRenderer();
-
 
     directionsDisplay.setMap(map);
     directionsDisplay.setPanel(document.getElementById('panel'));
