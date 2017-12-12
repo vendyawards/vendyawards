@@ -20,6 +20,7 @@
   <script src = "map-page.js"></script>
 
   <div class="ui text headerText">
+    <p></p>
     <p>Check out the vending machines that supports</p>
     <p>the winners from VendyAwards!</p>
   </div>
@@ -90,8 +91,8 @@
     directionsDisplay.setPanel(document.getElementById('panel'));
 
     var request = {
-      origin: "centerLocation",
-      destination: "Manoa",
+      origin: centerLocation,
+      destination: marker,
       travelMode: google.maps.DirectionsTravelMode.WALKING
     };
 
