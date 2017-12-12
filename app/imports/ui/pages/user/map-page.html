@@ -18,9 +18,10 @@
   </script>
   <body>
   <script src = "map-page.js"></script>
- 
+
   <div class="ui text headerText">
-    Google Maps
+    <p>Check out the vending machines that supports</p>
+    <p>the winners from VendyAwards!</p>
   </div>
   <div id="map"></div>
 
@@ -28,11 +29,13 @@
     function initMap() {
 
       var locations = [
-      ['Manoa', 21.294206, -157.818520, 4],
-      ['Moore Hall', 21.301044, -157.815060, 5],
+      ["Webster Hall", 21.300760, -157.817793, 7],
+        ["QLCSS",21.300562, -157.818362, 6],
+      ['Manoa', 21.294206, -157.818520, 5],
+      ['Moore Hall', 21.301044, -157.815060, 4],
       ['Saint John Science Lab', 21.301529, -157.815482, 3],
-      ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
-      ['Maroubra Beach', -33.950198, 151.259302, 1]
+      ['Keller Hall', 21.299776, -157.816169, 2],
+      ['Art', 21.299152, -157.817503, 1]
     ];
 
       var map = new google.maps.Map(document.getElementById('map'), {
@@ -42,6 +45,7 @@
       });
 
       var centerLocation = { lat: 21.294206, lng: -157.818520 };
+      var infowindow = new google.maps.InfoWindow();
 
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
@@ -51,12 +55,16 @@
           centerLocation.lng = position.coords.longitude;
           marker = new google.maps.Marker({
             position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-            map: map
+            map: map,
+
+            })
+          marker.addListener('click', function() {
+            infowindow.setContent("Current Location");
+            infowindow.open(map, marker);
+
           });
         });
       }
-
-    var infowindow = new google.maps.InfoWindow();
 
     var marker, i;
 
@@ -74,6 +82,25 @@
       })(marker, i));
       }
     }
+    var directionsService = new google.maps.DirectionsService();
+    var directionsDisplay = new google.maps.DirectionsRenderer();
+
+
+    directionsDisplay.setMap(map);
+    directionsDisplay.setPanel(document.getElementById('panel'));
+
+    var request = {
+      origin: "centerLocation",
+      destination: "Manoa",
+      travelMode: google.maps.DirectionsTravelMode.WALKING
+    };
+
+    directionsService.route(request, function(response, status) {
+      if (status == google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setDirections(response);
+      }
+    });
+
   </script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApofu0JMHh1EKcS9hiJ9GLMzMmnV-8pJs&callback=initMap"
           type="text/javascript"></script>
