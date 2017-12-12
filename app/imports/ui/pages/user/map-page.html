@@ -6,51 +6,80 @@
       #map {
         height: 600px;
         width: 65%;
-        margin: 50px 150px 50px 150px;
+        margin: 50px 250px 50px 270px;
       }
     </style>
   </head>
   <link rel="stylesheet" href="map-page.css">
 
+
+  <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyS2q3l2UXkKwc3cpazqBLFywhHJLsye4&callback=initMap">
+  </script>
   <body>
+  <script src = "map-page.js"></script>
+ 
   <div class="ui text headerText">
     Google Maps
   </div>
   <div id="map"></div>
+
   <script>
-    function toggleBounce() {
-      if (marker.getAnimation() !== null) {
-        marker.setAnimation(null);
-      } else {
-        marker.setAnimation(google.maps.Animation.BOUNCE);
+    function initMap() {
+
+      var locations = [
+      ['Manoa', 21.294206, -157.818520, 4],
+      ['Moore Hall', 21.301044, -157.815060, 5],
+      ['Saint John Science Lab', 21.301529, -157.815482, 3],
+      ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+      ['Maroubra Beach', -33.950198, 151.259302, 1]
+    ];
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: new google.maps.LatLng(21.294206, -157.818520),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+
+      var centerLocation = { lat: 21.294206, lng: -157.818520 };
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          var initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+          map.setCenter(initialLocation);
+          centerLocation.lat = position.coords.latitude;
+          centerLocation.lng = position.coords.longitude;
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+            map: map
+          });
+        });
+      }
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function (marker, i) {
+        return function () {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
       }
     }
-    function initMap() {
-      var manoa = { lat: 21.294206, lng: -157.818520 };
-      var v1 = { lat: 21.294206, lng: -157.818520 };
-      var v2 = { lat: 21.294206, lng: -157.818520 };
-      var v3 = { lat: 21.294206, lng: -157.818520 };
-      var v4 = { lat: 21.294206, lng: -157.818520 };
-      var v5 = { lat: 21.294206, lng: -157.818520 };
-      var v6 = { lat: 21.294206, lng: -157.818520 };
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 17,
-        center: manoa
-      });
-      var marker = new google.maps.Marker({
-        position: manoa,
-        map: map,
-        animation: google.maps.Animation.DROP,
-        <!--label: 'V'-->
-      });
-      marker.addListener('click', toggleBounce);
-    }
   </script>
-
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApofu0JMHh1EKcS9hiJ9GLMzMmnV-8pJs&callback=initMap"
           type="text/javascript"></script>
   </body>
-  </html>
 
+
+  </html>
 
 </template>
