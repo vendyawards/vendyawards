@@ -3,6 +3,7 @@
 }
 .ui.text.headertext{
   font-size: 2.5rem;
+  font-family: "gubblebum-blocky", monospace;
   margin: 5px;
   padding: 40px 50px 20px 225px;
 }
