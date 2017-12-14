@@ -12,10 +12,6 @@
   </head>
   <link rel="stylesheet" href="map-page.css">
 
-
-  <script async defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyS2q3l2UXkKwc3cpazqBLFywhHJLsye4&callback=initMap">
-  </script>
   <body>
   <script src = "map-page.js"></script>
 
@@ -30,7 +26,7 @@
 
       var locations = [
       ["Webster Hall", 21.300760, -157.817793, 7],
-        ["QLCSS",21.300562, -157.818362, 6],
+      ["QLCSS",21.300562, -157.818362, 6],
       ['Manoa', 21.294206, -157.818520, 5],
       ['Moore Hall', 21.301044, -157.815060, 4],
       ['Saint John Science Lab', 21.301529, -157.815482, 3],
@@ -39,7 +35,7 @@
     ];
 
       var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 14,
+        zoom: 15,
         center: new google.maps.LatLng(21.294206, -157.818520),
         mapTypeId: google.maps.MapTypeId.ROADMAP
       });
