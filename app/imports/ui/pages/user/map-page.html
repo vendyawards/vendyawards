@@ -26,8 +26,8 @@
 
       var locations = [
       ["Webster Hall", 21.300760, -157.817793, 7],
-      ["QLCSS",21.300562, -157.818362, 6],
-      ['Manoa', 21.294206, -157.818520, 5],
+      ["Queen Liliuokalani Center for Student Services",21.300562, -157.818362, 6],
+      ['Manoa Road', 21.294206, -157.818520, 5],
       ['Moore Hall', 21.301044, -157.815060, 4],
       ['Saint John Science Lab', 21.301529, -157.815482, 3],
       ['Keller Hall', 21.299776, -157.816169, 2],
@@ -70,14 +70,20 @@
         map: map
       });
 
+
       google.maps.event.addListener(marker, 'click', (function (marker, i) {
         return function () {
           infowindow.setContent(locations[i][0]);
           infowindow.open(map, marker);
+          var center = new google.maps.LatLng(locations[i][1], locations[i][2]);
+          map.setCenter(center);
+          map.setZoom(19);
+
         }
       })(marker, i));
       }
     }
+
     var directionsService = new google.maps.DirectionsService();
     var directionsDisplay = new google.maps.DirectionsRenderer();
 
