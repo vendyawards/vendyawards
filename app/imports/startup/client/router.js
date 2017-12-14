@@ -68,7 +68,7 @@ userRoutes.route('/filter', {
   },
 });
 
-export const votingPageRouteName = 'Filter_Page';
+export const votingPageRouteName = 'Voting_Page';
 userRoutes.route('/voting', {
   name: filterPageRouteName,
   action() {
