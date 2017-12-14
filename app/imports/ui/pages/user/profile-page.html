@@ -4,64 +4,42 @@
 
   <div class="ui text container segment">
     <div class="ui dividing header">
-      Nomination
+      What do you want to see in next months vending machines?
     </div>
-    <form class="ui form nomination-form {{ successClass }} {{ errorClass }}">
+    <form class="ui equal width form profile-data-form {{ successClass }} {{ errorClass }}">
+
+      <div class="fields">
+        {{> Text_Form_Control label="First" placeholder="first nomination" value=profile.first errorMessage=(fieldError "first")}}
+
+      </div>
 
       <div class="field">
-        <h2><center>What do you want to see in next months vending machines?</center></h2>
+        {{> Text_Form_Control label="Second" placeholder="second nomination" value=profile.second errorMessage=(fieldError "second")}}
       </div>
 
-      <div class="inline fields">
-        <div class="sixteen wide field">
-          <label><h3>1. </h3> </label>
-            <input class="first" type="text" label="First">
+      <div class="field">
+        {{> Text_Form_Control label="Third" placeholder="third nomination" value=profile.third errorMessage=(fieldError "third")}}
+      </div>
+
+      <div class="field">
+        {{> Text_Form_Control label="Fourth" placeholder="fourth nomination" value=profile.fourth errorMessage=(fieldError "fourth")}}
+      </div>
+
+      <div class="fields">
+        {{> Text_Form_Control label="Fifth" placeholder="fifth nomination" value=profile.fifth errorMessage=(fieldError "fifth")}}
+      </div>
+
+     <p hidden> <div class="field">
+        {{> Select_Form_Control label="Interests" options=interests errorMessage=(fieldError "interests") multiple=false }}
+      </div>
+      </p>
+
+      <button class="ui primary button" type="submit">Submit</button>
+      {{#if displaySuccessMessage}}
+        <div class="ui success message">
+          <p>Your nomination has been submitted. Thank you!</p>
         </div>
-      </div>
-
-      <div class="inline fields">
-
-        <div class="sixteen wide field">
-          <label><h3>2. </h3> </label>
-          <input class="second" type="text" label="Second">
-        </div>
-
-      </div>
-
-      <div class="inline fields">
-
-        <div class="sixteen wide field">
-          <label><h3>3. </h3> </label>
-          <input class="third" type="text" label="Third">
-        </div>
-
-      </div>
-
-      <div class="inline fields">
-
-        <div class="sixteen wide field">
-          <label><h3>4. </h3> </label>
-          <input class="fourth" type="text" label="Fourth">
-        </div>
-
-      </div>
-
-      <div class="inline fields">
-
-        <div class="sixteen wide field">
-          <label><h3>5. </h3></label>
-          <input class="fifth" type="text" label="Fifth">
-        </div>
-
-      </div>
-
-        <button class="ui primary button submit" type="submit">Submit</button>
-        {{#if displaySuccessMessage}}
-         <div class="ui success message">
-            <p>Thank you for your nomination.</p>
-          </div>
-        {{/if}}
-
+      {{/if}}
     </form>
   </div>
 
