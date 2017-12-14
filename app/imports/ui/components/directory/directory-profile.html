@@ -1,38 +1,161 @@
 <template name="Directory_Profile">
 
-  <div class="card">
-    <div class="content">
-      <img class="right floated mini ui image" src="{{ profile.picture }}">
-      <div class="header">
-        {{ profile.firstName }} {{ profile.lastName }}
-      </div>
-      <div class="meta">
-        {{ profile.title}}
-      </div>
-      <div class="description">
-        {{ profile.bio }}
-      </div>
-      <div style="margin-top: 10px">
-        {{#each interest in profile.interests}}
-          <a style="margin-bottom: 2px" class="ui teal tag small label">{{interest}}</a>
-        {{/each}}
-      </div>
 
-    </div>
-    <div class="extra content">
-      <div class="ui equal width center aligned grid">
-        <div class="column"><a href="mailto:{{ profile.username}}@hawaii.edu"><i class="big mail icon"></i></a></div>
-        {{#if profile.github }}
-          <div class="column"><a href="https://github.com/{{ profile.github}}"><i class="big github icon"></i></a></div>
-        {{/if}}
-        {{#if profile.facebook }}
-          <div class="column"><a href="https://facebook.com/{{ profile.facebook}}"><i class="big facebook icon"></i></a></div>
-        {{/if}}
-        {{#if profile.instagram }}
-          <div class="column"><a href="https://instagram.com/{{ profile.instagram}}"><i class="big instagram icon"></i></a></div>
-        {{/if}}
+  <div class="ui centered card">
+    <div class="content">
+      <div class="header">
+        <center>
+        {{ profile.first }}
+        </center>
       </div>
     </div>
+    <button class="ui toggle button">Vote</button>
   </div>
+
+  <div class="ui centered card">
+    <div class="content">
+      <div class="header">
+        <center>
+          {{ profile.second }}
+        </center>
+      </div>
+    </div>
+    <button class="ui toggle button">Vote</button>
+  </div>
+
+  <div class="ui centered card">
+    <div class="content">
+      <div class="header">
+        <center>
+          {{ profile.third }}
+        </center>
+      </div>
+    </div>
+    <button class="ui toggle button">Vote</button>
+  </div>
+
+  <div class="ui centered card">
+    <div class="content">
+      <div class="header">
+        <center>
+          {{ profile.fourth }}
+        </center>
+      </div>
+    </div>
+    <button class="ui toggle button">Vote</button>
+  </div>
+
+  <div class="ui centered card">
+    <div class="content">
+      <div class="header">
+        <center>
+          {{ profile.fifth }}
+        </center>
+      </div>
+    </div>
+    <button class="ui toggle button">Vote</button>
+  </div>
+
+  <div class="ui centered card">
+    <div class="content">
+      <div class="header">
+        <center>
+          Snickers
+        </center>
+      </div>
+    </div>
+    <button class="ui toggle button">Vote</button>
+  </div>
+
+  <div class="ui centered card">
+    <div class="content">
+      <div class="header">
+        <center>
+          Starbursts
+        </center>
+      </div>
+    </div>
+    <button class="ui toggle button">Vote</button>
+  </div>
+
+  <div class="ui centered card">
+    <div class="content">
+      <div class="header">
+        <center>
+          Apples
+        </center>
+      </div>
+    </div>
+    <button class="ui toggle button">Vote</button>
+  </div>
+
+  <div class="ui centered card">
+    <div class="content">
+      <div class="header">
+        <center>
+          Spam Musubis
+        </center>
+      </div>
+    </div>
+    <button class="ui toggle button">Vote</button>
+  </div>
+
+  <div class="ui centered card">
+    <div class="content">
+      <div class="header">
+        <center>
+          Sun Chips
+        </center>
+      </div>
+    </div>
+    <button class="ui toggle button">Vote</button>
+  </div>
+
+  <div class="ui centered card">
+    <div class="content">
+      <div class="header">
+        <center>
+          Hi Chews
+        </center>
+      </div>
+    </div>
+    <button class="ui toggle button">Vote</button>
+  </div>
+
+  <div class="ui centered card">
+    <div class="content">
+      <div class="header">
+        <center>
+          Teriyaki Beef Jerky
+        </center>
+      </div>
+    </div>
+    <button class="ui toggle button">Vote</button>
+  </div>
+
+
+  <script>
+    $('.ui.button.toggle').state();
+
+  function show(b){
+    alert( $(b).hasClass("active"));
+  }
+
+  // attach ready event
+  $(document)
+      .ready(function() {
+        var $toggle  = $('.ui.toggle.button');
+        $toggle
+            .state({
+              text: {
+                inactive : 'Vote',
+                active   : 'Voted'
+              }
+            })
+        ;
+
+      })
+  ;
+ </script>
 
 </template>

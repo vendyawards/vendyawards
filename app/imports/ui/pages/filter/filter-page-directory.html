@@ -1,7 +1,23 @@
 <template name="Filter_Page_Directory">
+
+  <h1 class="ui center aligned header">Vote for your top 5 favorite snacks!</h1>
+
   <div style="margin-top: 20px" class="ui cards">
     {{#each profile in profiles }}
       {{> Directory_Profile profile=profile }}
     {{/each}}
   </div>
+
+  <br>
+  <br>
+  <br>
+
+  <a href="/"><button class="ui fluid massive positive button" href="/" type="submit">Submit</button></a>
+  {{#if displaySuccessMessage}}
+    <div class="ui success message">
+      <p>Your votes has been submitted. Thank you!</p>
+    </div>
+  {{/if}}
+
+
 </template>

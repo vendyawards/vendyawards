@@ -1,13 +1,13 @@
 <template name="Voting_Page">
   {{#if Template.subscriptionsReady}}
     <div style="margin-top: 10px" class="ui container">
-
-      <form class="ui equal width form filter-data-form">
+      
+      <p hidden><form class="ui equal width form filter-data-form">
         <div class="field">
           {{> Select_Form_Control label="Interests" options=interests multiple=true }}
         </div>
         <button class="ui teal button" type="submit">Filter</button>
-      </form>
+      </form></p>
 
       {{> Filter_Page_Directory profiles=profiles }}
 
